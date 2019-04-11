@@ -3,21 +3,19 @@
 
 #include "gba.h"
 
+typedef enum {
+    SPLASH_SCREEN,
+    TITLE_SCREEN,
+    TITLE_SCREEN_NODRAW,
+    INTRO_CUTSCENE,
+    MAIN_LEVEL_INIT,
+    MAIN_LEVEL,
+    GAME_OVER,
+    GAME_OVER_NODRAW
+} GBAState;
+
 typedef struct {
-    // Store whether or not the game is over in this member:
-    int gameOver;
-
-    /*
-    * TA-TODO: Add any logical elements you need to keep track of in your app.
-    *
-    * For example, for a Snake game, those could be:
-    *
-    * Snake snake;
-    * Food foods[10];
-    * int points;
-    *
-    */
-
+    GBAState state;
 } AppState;
 
 /*

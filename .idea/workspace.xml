@@ -9,7 +9,46 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e24933d-346c-4750-b79b-debec37a1d12" name="Default Changelist" comment="" />
+    <list default="true" id="6e24933d-346c-4750-b79b-debec37a1d12" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scenes/gameover.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/gameover.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/introcutscene.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/introcutscene.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/mainlevel.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/mainlevel.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/splashscreen.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/splashscreen.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/titlescreen.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/titlescreen.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hw10.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hw10.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.elf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.gba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crt0.o" beforeDir="false" afterPath="$PROJECT_DIR$/crt0.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draw.o" beforeDir="false" afterPath="$PROJECT_DIR$/draw.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emulator.log" beforeDir="false" afterPath="$PROJECT_DIR$/emulator.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font.o" beforeDir="false" afterPath="$PROJECT_DIR$/font.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gba.c" beforeDir="false" afterPath="$PROJECT_DIR$/gba.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gba.h" beforeDir="false" afterPath="$PROJECT_DIR$/gba.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gba.o" beforeDir="false" afterPath="$PROJECT_DIR$/gba.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/garbage.o" beforeDir="false" afterPath="$PROJECT_DIR$/images/garbage.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ramranch.o" beforeDir="false" afterPath="$PROJECT_DIR$/images/ramranch.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libc_sbrk.o" beforeDir="false" afterPath="$PROJECT_DIR$/libc_sbrk.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic.c" beforeDir="false" afterPath="$PROJECT_DIR$/logic.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic.h" beforeDir="false" afterPath="$PROJECT_DIR$/logic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic.o" beforeDir="false" afterPath="$PROJECT_DIR$/logic.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myLib.c" beforeDir="false" afterPath="$PROJECT_DIR$/myLib.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myLib.h" beforeDir="false" afterPath="$PROJECT_DIR$/myLib.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myLib.o" beforeDir="false" afterPath="$PROJECT_DIR$/myLib.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ramranch_audio.c" beforeDir="false" afterPath="$PROJECT_DIR$/audio/ramranch_audio.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ramranch_audio.h" beforeDir="false" afterPath="$PROJECT_DIR$/audio/ramranch_audio.h" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +81,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1554874728000" />
-        <entry key="$PROJECT_DIR$/compile_commands.json" value="3710806860" />
+        <entry key="$PROJECT_DIR$" value="1554915925000" />
+        <entry key="$PROJECT_DIR$/compile_commands.json" value="2405185298" />
       </map>
     </option>
     <option name="projectSyncType">
@@ -62,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gba.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+            <state relative-caret-position="872">
+              <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -74,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gba.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
+            <state relative-caret-position="46">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -83,64 +122,65 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="17" column="103" selection-start-line="17" selection-start-column="103" selection-end-line="17" selection-end-column="103" />
+            <state relative-caret-position="19">
+              <caret line="17" column="224" selection-start-line="17" selection-start-column="224" selection-end-line="17" selection-end-column="224" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myLib.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-409">
+              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.c">
+        <entry file="file://$PROJECT_DIR$/scenes/mainlevel.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="607">
+              <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/garbage.h">
+        <entry file="file://$PROJECT_DIR$/images/rootytootypointnshooty.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+            <state relative-caret-position="437">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/garbage.c">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/ramranch.h">
+        <entry file="file://$PROJECT_DIR$/scenes/mainlevel.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="27" />
+            <state relative-caret-position="184">
+              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myLib.c">
+        <entry file="file://$PROJECT_DIR$/logic.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="110" column="45" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ramranch_audio.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+            <state relative-caret-position="308">
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -149,42 +189,65 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DMA_16</find>
-      <find>DMA_ENABLE</find>
-      <find>inter</find>
-      <find>timer0</find>
-      <find>interrupt_callback</find>
-      <find>interrupt_selection</find>
-      <find>.c</find>
-      <find>text</find>
-      <find>drawRectDMA</find>
-      <find>REG_DISPCNT</find>
-      <find>SCANLINECOUNTER</find>
-      <find>channel_a_vblanks_remaining</find>
-      <find>sound_control</find>
-      <find>DISABLE</find>
-      <find>master_sound</find>
-      <find>0x4000102</find>
-      <find>waitFor</find>
       <find>REG_TM0CNT</find>
       <find>0x40000C4</find>
       <find>timer0_control</find>
+      <find>GCCLIB</find>
+      <find>mednafen</find>
+      <find>nextAppState</find>
+      <find>waitForVBlank</find>
+      <find>text</find>
+      <find>waitForVl</find>
+      <find>#define</find>
+      <find>color</find>
+      <find>&quot;RAM</find>
+      <find>flash</find>
+      <find>onV</find>
+      <find>KEY_DOWN</find>
+      <find>button</find>
+      <find>MEDOPT</find>
+      <find>draw</find>
+      <find>waitFor</find>
+      <find>flashText</find>
+      <find>Buttons</find>
+      <find>height</find>
+      <find>rootytooty</find>
+      <find>rootytootypointnshooty</find>
+      <find>garbage</find>
+      <find>previousButton</find>
+      <find>r</find>
+      <find>DMA</find>
+      <find>ghost</find>
+      <find>redraw</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/myLib.h" />
         <option value="$USER_HOME$/Downloads/ramranch_audio.h" />
         <option value="$PROJECT_DIR$/ramranch_audio.c" />
         <option value="$PROJECT_DIR$/ramranch_audio.h" />
-        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/images/ramranch.h" />
         <option value="$PROJECT_DIR$/images/ramranch.c" />
-        <option value="$PROJECT_DIR$/gba.h" />
-        <option value="$PROJECT_DIR$/gba.c" />
+        <option value="$PROJECT_DIR$/logic.h" />
+        <option value="$PROJECT_DIR$/myLib.h" />
         <option value="$PROJECT_DIR$/myLib.c" />
+        <option value="$PROJECT_DIR$/scenes/introcutscene.h" />
+        <option value="$PROJECT_DIR$/scenes/titlescreen.h" />
+        <option value="$PROJECT_DIR$/scenes/introcutscene.c" />
+        <option value="$PROJECT_DIR$/gba.h" />
+        <option value="$PROJECT_DIR$/scenes/titlescreen.c" />
+        <option value="$PROJECT_DIR$/logic.c" />
+        <option value="$PROJECT_DIR$/images/rootytootypointnshooty.h" />
+        <option value="$PROJECT_DIR$/images/rootytootypointnshooty.c" />
+        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/scenes/mainlevel.h" />
         <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/gba.c" />
+        <option value="$PROJECT_DIR$/scenes/mainlevel.c" />
       </list>
     </option>
   </component>
@@ -192,7 +255,7 @@
   <component name="OCResolveContextSettings">
     <option name="configuration" value="$PROJECT_DIR$/main.c" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="144" />
     <option name="y" value="32" />
     <option name="width" value="1400" />
@@ -203,38 +266,41 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="hw10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hw10" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="gba-ramranch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gba-ramranch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="hw10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hw10" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="hw10" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hw10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hw10" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="hw10" type="462c0819:PsiDirectoryNode" />
+              <item name="gba-ramranch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gba-ramranch" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gba-ramranch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gba-ramranch" type="462c0819:PsiDirectoryNode" />
+              <item name="scenes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scenes" />
+      <recent name="$PROJECT_DIR$/audio" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$" />
@@ -272,67 +338,45 @@
       <updated>1554868023772</updated>
       <workItem from="1554868025988" duration="1207000" />
       <workItem from="1554869503021" duration="13245000" />
+      <workItem from="1554916119015" duration="14861000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14452000" />
+    <option name="totallyTimeSpent" value="29313000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18210863" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17932148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="CMake" weight="0.32913166" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32861805" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3277311" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.36126223" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.359944" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="11" weight="0.28444004" />
-      <window_info anchor="right" id="make" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="make" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/gba.h</url>
-          <line>95</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compile_commands.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1350" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mednafen-09x.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
     <entry file="file://$PROJECT_DIR$/emulator.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -364,34 +408,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myLib.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/ramranch_audio.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="28" selection-end-line="43385" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ramranch_audio.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ramranch_audio.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/ramranch_audio.h" />
     <entry file="file://$PROJECT_DIR$/images/ramranch.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -399,51 +416,181 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/images/garbage.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/images/ramranch.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="322">
           <caret line="14" column="27" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/garbage.c">
+    <entry file="file://$PROJECT_DIR$/audio/ramranch_audio.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compile_commands.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/splashscreen.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/garbage.h">
+    <entry file="file://$PROJECT_DIR$/scenes/splashscreen.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/gameover.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/gameover.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/ramranch_audio.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myLib.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="110" column="45" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
+        <state relative-caret-position="309">
+          <caret line="118" column="5" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/titlescreen.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/introcutscene.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/introcutscene.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#47#73#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/titlescreen.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/garbage.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draw.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logic.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draw.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="16" column="29" selection-start-line="16" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/rootytootypointnshooty.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mednafen-09x.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logic.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/mainlevel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myLib.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="17" column="103" selection-start-line="17" selection-start-column="103" selection-end-line="17" selection-end-column="103" />
+        <state relative-caret-position="19">
+          <caret line="17" column="224" selection-start-line="17" selection-start-column="224" selection-end-line="17" selection-end-column="224" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gba.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gba.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+        <state relative-caret-position="872">
+          <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
@@ -452,10 +599,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="-409">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/rootytootypointnshooty.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/mainlevel.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,6 +1,6 @@
 [
  {
-  "directory": "/home/drakewitt/coursework/2110/hw10",
+  "directory": "/Users/drakewitt/Course Work/2110/hw/gba-ramranch",
   "arguments": [
    "arm-none-eabi-gcc",
    "-Wall",
@@ -26,7 +26,7 @@
   "file": "gba.c"
  },
  {
-  "directory": "/home/drakewitt/coursework/2110/hw10",
+  "directory": "/Users/drakewitt/Course Work/2110/hw/gba-ramranch",
   "arguments": [
    "arm-none-eabi-gcc",
    "-Wall",
@@ -52,7 +52,7 @@
   "file": "font.c"
  },
  {
-  "directory": "/home/drakewitt/coursework/2110/hw10",
+  "directory": "/Users/drakewitt/Course Work/2110/hw/gba-ramranch",
   "arguments": [
    "arm-none-eabi-gcc",
    "-Wall",
@@ -78,7 +78,7 @@
   "file": "draw.c"
  },
  {
-  "directory": "/home/drakewitt/coursework/2110/hw10",
+  "directory": "/Users/drakewitt/Course Work/2110/hw/gba-ramranch",
   "arguments": [
    "arm-none-eabi-gcc",
    "-Wall",
@@ -104,7 +104,7 @@
   "file": "logic.c"
  },
  {
-  "directory": "/home/drakewitt/coursework/2110/hw10",
+  "directory": "/Users/drakewitt/Course Work/2110/hw/gba-ramranch",
   "arguments": [
    "arm-none-eabi-gcc",
    "-Wall",
@@ -130,7 +130,7 @@
   "file": "main.c"
  },
  {
-  "directory": "/home/drakewitt/coursework/2110/hw10",
+  "directory": "/Users/drakewitt/Course Work/2110/hw/gba-ramranch",
   "arguments": [
    "arm-none-eabi-gcc",
    "-Wall",
@@ -156,7 +156,59 @@
   "file": "images/garbage.c"
  },
  {
-  "directory": "/home/drakewitt/coursework/2110/hw10",
+  "directory": "/Users/drakewitt/Course Work/2110/hw/gba-ramranch",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-Wall",
+   "-Werror",
+   "-std=c99",
+   "-pedantic",
+   "-Wextra",
+   "-fno-common",
+   "-mthumb-interwork",
+   "-mthumb",
+   "-mlong-calls",
+   "-I",
+   "/usr/arm-none-eabi/include",
+   "-Wstrict-prototypes",
+   "-Wold-style-definition",
+   "-O2",
+   "-I../shared",
+   "-c",
+   "-o",
+   "myLib.o",
+   "myLib.c"
+  ],
+  "file": "myLib.c"
+ },
+ {
+  "directory": "/Users/drakewitt/Course Work/2110/hw/gba-ramranch",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-Wall",
+   "-Werror",
+   "-std=c99",
+   "-pedantic",
+   "-Wextra",
+   "-fno-common",
+   "-mthumb-interwork",
+   "-mthumb",
+   "-mlong-calls",
+   "-I",
+   "/usr/arm-none-eabi/include",
+   "-Wstrict-prototypes",
+   "-Wold-style-definition",
+   "-O2",
+   "-I../shared",
+   "-c",
+   "-o",
+   "images/ramranch.o",
+   "images/ramranch.c"
+  ],
+  "file": "images/ramranch.c"
+ },
+ {
+  "directory": "/Users/drakewitt/Course Work/2110/hw/gba-ramranch",
   "arguments": [
    "arm-none-eabi-gcc",
    "-Wall",
@@ -181,31 +233,5 @@
    "libc_sbrk.o"
   ],
   "file": "/opt/cs2110-tools/libc_sbrk.c"
- },
- {
-  "directory": "/home/drakewitt/coursework/2110/hw10",
-  "arguments": [
-   "arm-none-eabi-gcc",
-   "-Wall",
-   "-Werror",
-   "-std=c99",
-   "-pedantic",
-   "-Wextra",
-   "-fno-common",
-   "-mthumb-interwork",
-   "-mthumb",
-   "-mlong-calls",
-   "-I",
-   "/usr/arm-none-eabi/include",
-   "-Wstrict-prototypes",
-   "-Wold-style-definition",
-   "-O2",
-   "-I../shared",
-   "-c",
-   "-o",
-   "myLib.o",
-   "myLib.c"
-  ],
-  "file": "myLib.c"
  }
 ]

@@ -15,8 +15,10 @@ void waitForVBlank(void) {
     // Finally, increment the vBlank counter:
     while (SCANLINECOUNTER > 160);  // wait till VDraw
     while (SCANLINECOUNTER < 160); // wait till VBlank
-    vBlankCounter++;
-    on_vblank();
+    if (SCANLINECOUNTER == 160) {
+        vBlankCounter++;
+        on_vblank();
+    }
 }
 
 static int __qran_seed = 42;
@@ -42,6 +44,7 @@ void drawRectDMA(int x, int y, int width, int height, volatile u16 color) {
     }
 }
 
+
 void drawFullScreenImageDMA(const unsigned short *image) {
     DMA[3].src = &image;
     DMA[3].dst = &videoBuffer[0];
@@ -49,10 +52,12 @@ void drawFullScreenImageDMA(const unsigned short *image) {
     // TA-TODO: IMPLEMENT
 }
 
+
+
 void drawImageDMA(int x, int y, int width, int height, const u16 *image) {
     for (int i = 0; i < height; i++) {
-        DMA[3].src = &image[OFFSET(i, 0, width)];
-        DMA[3].dst = &videoBuffer[OFFSET(x + i, y, 240)];
+        DMA[3].src = image + OFFSET(i, 0, width);
+        DMA[3].dst = videoBuffer + OFFSET(y + i, x, 240);
         DMA[3].cnt = width | DMA_ON | DMA_SOURCE_INCREMENT | DMA_DESTINATION_INCREMENT;
     }
 }

@@ -1,6 +1,6 @@
 #include "gba.h"
 #include "myLib.h"
-#include "ramranch_audio.h"
+#include "audio/ramranch_audio.h"
 #include <stdio.h>
 
 /* define the timer control registers */
@@ -116,5 +116,13 @@ void on_vblank(void) {
         play_sound(ramranch_data, ramranch_length, 8000, 'A');
     } else {
         channel_a_vblanks_remaining--;
+    }
+}
+
+// Delay for about n seconds
+void delay(int n) {
+    volatile int x = 0;
+    for (int i = 0; i < n * 80000; i++) {
+        x++;
     }
 }

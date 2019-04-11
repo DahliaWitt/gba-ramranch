@@ -1,10 +1,11 @@
 #include "logic.h"
+#include "gba.h"
 
 void initializeAppState(AppState* appState) {
     // TA-TODO: Initialize everything that's part of this AppState struct here.
     // Suppose the struct contains random values, make sure everything gets
     // the value it should have when the app begins.
-    UNUSED(appState);
+    appState->state = MAIN_LEVEL_INIT;
 }
 
 // TA-TODO: Add any process functions for sub-elements of your app here.
