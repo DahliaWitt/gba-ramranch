@@ -20,7 +20,7 @@ int main(void) {
 
     play_sound(ramranch_data, ramranch_length, 8000, 'A');
 
-    GBAState state = MAIN_LEVEL_INIT;
+    GBAState gameState = MAIN_LEVEL_INIT;
 
     // We store the "previous" and "current" states.
     //AppState currentAppState, nextAppState;
@@ -33,21 +33,21 @@ int main(void) {
         // Load the current state of the buttons
         currentButtons = BUTTONS;
 
-        switch(state) {
+        switch(gameState) {
             case SPLASH_SCREEN:
                 // Wait for VBlank
                 waitForVBlank();
                 // DRAW SPLASH SCREEN
                 // WAIT FOR 3 SECONDS
                 // TODO: INSERT DELAY
-                state = TITLE_SCREEN;
+                gameState = TITLE_SCREEN;
                 break;
             case TITLE_SCREEN:
                 // DRAW TITLE SCREEN
                 waitForVBlank();
                 drawTitleScreen();
 
-                state = TITLE_SCREEN_NODRAW;
+                gameState = TITLE_SCREEN_NODRAW;
                 break;
             case TITLE_SCREEN_NODRAW:
                 // LISTEN FOR BUTTON PRESS
@@ -55,13 +55,13 @@ int main(void) {
 
                 if (KEY_JUST_PRESSED(BUTTON_START, currentButtons, previousButtons)) {
                     // flashText = 0;
-                    state = INTRO_CUTSCENE;
+                    gameState = INTRO_CUTSCENE;
                 }
                 break;
             case INTRO_CUTSCENE:
                 // DRAW INTRO CUTSCENE
                 startIntroCutscene();
-                state = MAIN_LEVEL_INIT;
+                gameState = MAIN_LEVEL_INIT;
                 break;
             case MAIN_LEVEL_INIT:
                 // Initialize the app. Switch to the APP state.
@@ -71,7 +71,7 @@ int main(void) {
                 //fullDrawAppState(&currentAppState);
                 initMainLevel();
 
-                state = MAIN_LEVEL;
+                gameState = MAIN_LEVEL;
                 break;
             case MAIN_LEVEL:
                 // Process the app for one frame, store the next state
@@ -96,9 +96,7 @@ int main(void) {
                 // currentAppState = nextAppState;
 
                 // Check if the app is exiting. If it is, then go to the exit state.
-                //if (nextAppState.state) {
-                    // state = GAME_OVER;
-                //}
+                gameState = state.nextState;
 
                 break;
             case GAME_OVER:
@@ -107,7 +105,7 @@ int main(void) {
 
                 // TA-TODO: Draw the exit / gameover screen
 
-                state = GAME_OVER_NODRAW;
+                gameState = GAME_OVER_NODRAW;
                 break;
             case GAME_OVER_NODRAW:
                 // TA-TODO: Check for a button press here to go back to the start screen
