@@ -54,7 +54,7 @@ vba : LDFLAGS += $(LDRELEASE)
 vba : $(PROGNAME).gba
 	@echo "[EXECUTE] Running Emulator VBA-M"
 	@echo "          Please see emulator.log if this fails"
-	@vbam $(VBAOPT) $(PROGNAME).gba >emulator.log 2>&1
+	@visualboyadvance-m $(VBAOPT) $(PROGNAME).gba >emulator.log 2>&1
 
 .PHONY : med
 med : CFLAGS += $(CRELEASE) -I../shared

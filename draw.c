@@ -15,21 +15,21 @@
 
 // This function will be used to draw everything about the app
 // including the background and whatnot.
-void fullDrawAppState(AppState *state) {
-    // TA-TODO: IMPLEMENT.
-    UNUSED(state);
-}
-
-// This function will be used to undraw (i.e. erase) things that might
-// move in a frame. E.g. in a Snake game, erase the Snake, the food & the score.
-void undrawAppState(AppState *state) {
-    // TA-TODO: IMPLEMENT.
-    UNUSED(state);
-}
-
-// This function will be used to draw things that might have moved in a frame.
-// For example, in a Snake game, draw the snake, the food, the score.
-void drawAppState(AppState *state) {
-    // TA-TODO: IMPLEMENT.
-    UNUSED(state);
-}
+//void fullDrawAppState(AppState *state) {
+//    // TA-TODO: IMPLEMENT.
+//    UNUSED(state);
+//}
+//
+//// This function will be used to undraw (i.e. erase) things that might
+//// move in a frame. E.g. in a Snake game, erase the Snake, the food & the score.
+//void undrawAppState(AppState *state) {
+//    // TA-TODO: IMPLEMENT.
+//    UNUSED(state);
+//}
+//
+//// This function will be used to draw things that might have moved in a frame.
+//// For example, in a Snake game, draw the snake, the food, the score.
+//void drawAppState(AppState *state) {
+//    // TA-TODO: IMPLEMENT.
+//    UNUSED(state);
+//}

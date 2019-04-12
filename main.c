@@ -20,10 +20,10 @@ int main(void) {
 
     play_sound(ramranch_data, ramranch_length, 8000, 'A');
 
-    GBAState state = TITLE_SCREEN;
+    GBAState state = MAIN_LEVEL_INIT;
 
     // We store the "previous" and "current" states.
-    AppState currentAppState, nextAppState;
+    //AppState currentAppState, nextAppState;
 
     // We store the current and previous values of the button input.
     u32 previousButtons = BUTTONS;
@@ -65,10 +65,10 @@ int main(void) {
                 break;
             case MAIN_LEVEL_INIT:
                 // Initialize the app. Switch to the APP state.
-                initializeAppState(&currentAppState);
+                //initializeAppState(&currentAppState);
 
                 // Draw the initial state of the app
-                fullDrawAppState(&currentAppState);
+                //fullDrawAppState(&currentAppState);
                 initMainLevel();
 
                 state = MAIN_LEVEL;
@@ -96,9 +96,9 @@ int main(void) {
                 // currentAppState = nextAppState;
 
                 // Check if the app is exiting. If it is, then go to the exit state.
-                if (nextAppState.state) {
+                //if (nextAppState.state) {
                     // state = GAME_OVER;
-                }
+                //}
 
                 break;
             case GAME_OVER:
