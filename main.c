@@ -7,6 +7,9 @@
 #include "scenes/titlescreen.h"
 #include "scenes/introcutscene.h"
 #include "scenes/mainlevel.h"
+#include "images/loser.h"
+#include "images/apesoft.h"
+#include "audio/ape_sound.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,11 +19,11 @@
 int main(void) {
     // TA-TODO: Manipulate REG_DISPCNT here to set Mode 3.
     REG_DISPCNT = MODE3 | BG2_ENABLE;
-    *sound_control = 0;
+    //*sound_control = 0;
 
-    play_sound(ramranch_data, ramranch_length, 8000, 'A');
+    play_sound(ape_sound_data, ramranch_length, 'A');
 
-    GBAState gameState = MAIN_LEVEL_INIT;
+    GBAState gameState = SPLASH_SCREEN;
 
     // We store the "previous" and "current" states.
     //AppState currentAppState, nextAppState;
@@ -29,39 +32,54 @@ int main(void) {
     u32 previousButtons = BUTTONS;
     u32 currentButtons = BUTTONS;
 
+    int localVblankCounter = 0;
+
     while (1) {
         // Load the current state of the buttons
         currentButtons = BUTTONS;
+
+        if (KEY_JUST_PRESSED(BUTTON_SELECT, currentButtons, previousButtons)) {
+            gameState = TITLE_SCREEN;
+        }
 
         switch(gameState) {
             case SPLASH_SCREEN:
                 // Wait for VBlank
                 waitForVBlank();
+                drawImageDMA(0,0, WIDTH, HEIGHT, apesoft);
+                localVblankCounter++;
                 // DRAW SPLASH SCREEN
                 // WAIT FOR 3 SECONDS
                 // TODO: INSERT DELAY
-                gameState = TITLE_SCREEN;
+                if (localVblankCounter > 180) {
+                    gameState = TITLE_SCREEN;
+                }
+
                 break;
             case TITLE_SCREEN:
                 // DRAW TITLE SCREEN
                 waitForVBlank();
                 drawTitleScreen();
+                startAudio();
 
                 gameState = TITLE_SCREEN_NODRAW;
                 break;
             case TITLE_SCREEN_NODRAW:
                 // LISTEN FOR BUTTON PRESS
                 // IF START PRESSED
-
+                waitForVBlank();
                 if (KEY_JUST_PRESSED(BUTTON_START, currentButtons, previousButtons)) {
-                    // flashText = 0;
+                    flashText = 0;
                     gameState = INTRO_CUTSCENE;
                 }
                 break;
             case INTRO_CUTSCENE:
                 // DRAW INTRO CUTSCENE
+                waitForVBlank();
                 startIntroCutscene();
-                gameState = MAIN_LEVEL_INIT;
+                if(goToNext == 1) {
+                    gameState = MAIN_LEVEL_INIT;
+                }
                 break;
             case MAIN_LEVEL_INIT:
                 // Initialize the app. Switch to the APP state.
@@ -79,10 +97,11 @@ int main(void) {
 
                 mainLevelEventListener(currentButtons, previousButtons);
 
+                redrawScene();
+
                 // Wait for VBlank before we do any drawing.
                 waitForVBlank();
 
-                redrawScene();
                 // mainLevelEventListener(currentButtons, previousButtons);
                 // redrawScene(row, col);
 
@@ -103,7 +122,8 @@ int main(void) {
                 // Wait for VBlank
                 waitForVBlank();
 
-                // TA-TODO: Draw the exit / gameover screen
+                drawImageDMA(0, 0, 240, 160, LOSER);
+
 
                 gameState = GAME_OVER_NODRAW;
                 break;

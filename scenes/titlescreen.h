@@ -8,5 +8,6 @@
 extern int flashText;
 void drawTitleScreen(void);
 void startTextFlash(void);
+void startAudio(void);
 
 #endif //GBA_RAMRANCH_TITLESCREEN_H

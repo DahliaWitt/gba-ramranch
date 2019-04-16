@@ -12,6 +12,8 @@
 #define SCR_THREE "Ram Ranch is Under Siege"
 #define SCR_FOUR "UNDER LOCKDOWN"
 
+extern int goToNext;
+
 void startIntroCutscene(void);
 
 #endif //GBA_RAMRANCH_INTROCUTSCENE_H

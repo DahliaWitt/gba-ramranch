@@ -1,7 +1,7 @@
 ################################################################################
 # These are variables for the GBA toolchain build
 # You can add others if you wish to
-# ***** YOUR NAME HERE *****
+# ***** Drake Witt *****
 ################################################################################
 
 # TA-TODO: Put your game name here.
@@ -15,7 +15,7 @@ PROGNAME = RamRanch
 # that will be compiled into your program. For example
 # if you have main.c and myLib.c then in the following
 # line you would put main.o and myLib.o
-OFILES = gba.o font.o draw.o logic.o main.o images/garbage.o myLib.o images/ramranch.o audio/ramranch_audio.c scenes/titlescreen.o scenes/introcutscene.o scenes/mainlevel.o images/rootytootypointnshooty.o images/fordraptor.o
+OFILES = gba.o font.o draw.o logic.o main.o images/garbage.o myLib.o images/ramranch.o audio/ramranch_audio.c scenes/titlescreen.o scenes/introcutscene.o scenes/mainlevel.o images/rootytootypointnshooty.o images/fordraptor.o images/loser.o images/apesoft.o audio/ape_sound.c
 
 ################################################################################
 # These are various settings used to make the GBA toolchain work
@@ -76,3 +76,7 @@ submit: clean
 clean :
 	@echo "[CLEAN] Removing all compiled files"
 	rm -f *.o *.elf *.gba *.log */*.o
+
+.PHONY: move
+move:
+	find . -name "*.o" -exec mv '{}' ./build \;

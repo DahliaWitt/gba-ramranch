@@ -44,5 +44,6 @@ void initMainLevel(void);
 void mainLevelEventListener(u32 currentButtons, u32 previousButtons);
 void checkForBulletCollisions(int bulletIndex);
 void checkForPlayerCollisions(void);
+void redrawScore(void);
 
 #endif //GBA_RAMRANCH_MAINLEVEL_H

@@ -1,6 +1,11 @@
 #include "titlescreen.h"
 #include "../gba.h"
 #include "../images/ramranch.h"
+#include "../audio/ramranch_audio.h"
+#include "../myLib.h"
+
+int audioPlaying = 0;
+int flashText = 1;
 
 void drawTitleScreen(void) {
     drawImageDMA(0, 0, 240, 160, ramranch);
@@ -8,7 +13,6 @@ void drawTitleScreen(void) {
 }
 
 void startTextFlash(void) {
-    int flashText = 1;
     int vblankTime = 0;
     while(flashText == 1) {
         waitForVBlank();
@@ -20,5 +24,12 @@ void startTextFlash(void) {
             vblankTime = -1;
         }
         vblankTime++;
+    }
+}
+
+void startAudio(void) {
+    if (audioPlaying == 0) {
+        play_sound(ramranch_data, ramranch_length, 'A');
+        audioPlaying = 1;
     }
 }

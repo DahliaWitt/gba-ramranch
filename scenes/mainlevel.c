@@ -4,27 +4,28 @@
 #include "../logic.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 MainLevelState state;
+int score;
 
 void initMainLevel(void) {
     state.nextState = MAIN_LEVEL;
+    score = 0;
     Cowboy cowboy;
     cowboy.col = 40;
-    cowboy.row = 10;
+    cowboy.row = 75;
     state.cowboy = cowboy;
     fillScreenDMA(0xFFFF); // Fill screen with white
-    // TODO: Howdy yall
-    drawImageDMA(10, 40, ROOTYTOOTYPOINTNSHOOTY_WIDTH, ROOTYTOOTYPOINTNSHOOTY_HEIGHT, rootytootypointnshooty);
-
-    state.vBlanksUntilNextTruck = 120;
+    state.vBlanksUntilNextTruck = 0;
     state.truckPosition = 0;
     state.numTrucks = 0;
+    redrawScore();
 }
 
 void spawnTruck(void) {
     FordRaptorTruck *truck = (FordRaptorTruck *) malloc(sizeof(FordRaptorTruck));
-    truck->row = (70 * state.truckPosition) + 10;
+    truck->row = (45 * state.truckPosition) + 10;
     truck->col = 160;
     // find first non-empty
     int i = 0;
@@ -32,7 +33,6 @@ void spawnTruck(void) {
         i++;
     }
     state.trucks[i] = truck;
-    // TODO: Error check
     state.numTrucks++;
 
     if (state.truckPosition == 2) {
@@ -52,22 +52,22 @@ void spawnBullet(void) {
         i++;
     }
     state.bullets[i] = bulletBill;
-    // TODO: Error check
     state.numBullets++;
 }
 
 void yeetusDeletusCowboy(void) {
-    drawCenteredString(10, 10, WIDTH, HEIGHT, "Cowboy ded lmfao", 0xAAAA);
     state.nextState = TITLE_SCREEN;
 }
 
 void removeBullet(int index) {
+    drawRectDMA(state.bullets[index]->col - 2, state.bullets[index]->row, 6, 2, 0xFFFF);
     free(state.bullets[index]);
     state.bullets[index] = NULL;
     state.numBullets--;
 }
 
 void removeTruck(int index) {
+    drawRectDMA(state.trucks[index]->col, state.trucks[index]->row, FORDRAPTOR_WIDTH + 1, FORDRAPTOR_HEIGHT, 0xFFFF);
     free(state.trucks[index]);
     state.trucks[index] = NULL;
     state.numTrucks--;
@@ -80,6 +80,8 @@ void drawBullets(void) {
                 removeBullet(i);
             } else {
                 drawRectDMA(state.bullets[i]->col, state.bullets[i]->row, 6, 2, 0x0000);
+                // Bullets will always move one way
+                drawRectDMA(state.bullets[i]->col - 2, state.bullets[i]->row, 2, 2, 0xFFFF);
                 state.bullets[i]->col += 2;
                 checkForBulletCollisions(i);
             }
@@ -90,8 +92,15 @@ void drawBullets(void) {
 
 void redrawTruck(void) {
     for (int i = 0; i < state.numTrucks; i++) {
-        drawImageDMA(state.trucks[i]->col, state.trucks[i]->row, FORDRAPTOR_WIDTH, FORDRAPTOR_HEIGHT, fordraptor);
-        state.trucks[i]->col--;
+        // if it gets to the edge, despawn because it gets janky
+        if (state.trucks[i]->col < 0) {
+            removeTruck(i);
+        } else {
+            drawImageDMA(state.trucks[i]->col, state.trucks[i]->row, FORDRAPTOR_WIDTH, FORDRAPTOR_HEIGHT, fordraptor);
+            // Truck will always move one way
+            drawRectDMA(state.trucks[i]->col + FORDRAPTOR_WIDTH, state.trucks[i]->row, 1, FORDRAPTOR_HEIGHT, 0xFFFF);
+            state.trucks[i]->col -= 1;
+        }
     }}
 
 void redrawCowboy(void) {
@@ -101,14 +110,28 @@ void redrawCowboy(void) {
     }
 }
 
+void redrawScore(void) {
+    char str[8];
+    sprintf(str, "Score: %d", score);
+    drawRectDMA(0, 1, 50, 7, 0xFFFF);
+    drawString(0,1, str, 0x0000);
+}
+
 void redrawScene(void) {
-    fillScreenDMA(0xFFFF); // Fill screen with black
     if (state.numBullets > 0) {
         drawBullets();
     }
-    redrawCowboy();
     redrawTruck();
+    redrawCowboy();
+
+    if (state.vBlanksUntilNextTruck-- == 0) {
+        if (state.numTrucks < 3) {
+            spawnTruck();
+        }
+        state.vBlanksUntilNextTruck = 180;
+    }
 }
+
 
 //////////////////////////////
 // COLLISION LOGIC
@@ -116,78 +139,62 @@ void redrawScene(void) {
 void checkForBulletCollisions(int bulletIndex) {
     for (int i = 0; i < state.numTrucks; i++) {
         // Check for bullet collision
-        if (state.bullets[bulletIndex]->col == state.trucks[i]->col && COMPARE_THREE_NUMBERS(state.trucks[i]->row,
-                state.bullets[bulletIndex]->row, state.trucks[i]->row + FORDRAPTOR_HEIGHT)) {
-            // delet this
-            removeTruck(i);
-            removeBullet(bulletIndex);
+        if (state.trucks[i] != NULL) {
+            if ((state.bullets[bulletIndex]->col >= state.trucks[i]->col) &&
+                (state.bullets[bulletIndex]->row >= state.trucks[i]->row) &&
+                (state.bullets[bulletIndex]->row <= state.trucks[i]->row + FORDRAPTOR_HEIGHT)) {
+                score++;
+                redrawScore();
+                // delet this
+                removeTruck(i);
+                removeBullet(bulletIndex);
+            }
         }
     }
 }
 
 void checkForPlayerCollisions(void) {
     for (int i = 0; i < state.numTrucks; i++) {
-        // Check for player collision
-        int cowboyColEnd = state.cowboy.col + ROOTYTOOTYPOINTNSHOOTY_WIDTH;
-        int truckColEnd = state.trucks[i]->col + FORDRAPTOR_WIDTH;
-        int cowboyRowEnd = state.cowboy.row + ROOTYTOOTYPOINTNSHOOTY_HEIGHT;
-        int truckRowEnd = state.trucks[i]->row + FORDRAPTOR_HEIGHT;
-        if ((cowboyColEnd >= state.trucks[i]->col) &&
+        if (state.trucks[i] != NULL) {
+            // Check for player collision
+            int cowboyColEnd = state.cowboy.col + ROOTYTOOTYPOINTNSHOOTY_WIDTH;
+            int truckColEnd = state.trucks[i]->col + FORDRAPTOR_WIDTH;
+            int cowboyRowEnd = state.cowboy.row + ROOTYTOOTYPOINTNSHOOTY_HEIGHT;
+            int truckRowEnd = state.trucks[i]->row + FORDRAPTOR_HEIGHT;
+            if ((cowboyColEnd >= state.trucks[i]->col) &&
                 (state.cowboy.col <= truckColEnd) &&
                 (cowboyRowEnd >= state.trucks[i]->row) &&
                 (state.cowboy.row <= truckRowEnd)) {
-            yeetusDeletusCowboy();
+                removeTruck(i);
+                yeetusDeletusCowboy();
+            }
         }
     }
 }
 
 
 void mainLevelEventListener(u32 currentButtons, u32 previousButtons) {
-    if (KEY_DOWN(BUTTON_UP, currentButtons) && 0 < state.cowboy.row) {
+    if (KEY_DOWN(BUTTON_UP, currentButtons) && 8 < state.cowboy.row) {
         state.cowboy.row--;
+        drawRectDMA(state.cowboy.col - 1, (state.cowboy.row) + ROOTYTOOTYPOINTNSHOOTY_HEIGHT, ROOTYTOOTYPOINTNSHOOTY_WIDTH + 2, 1, 0xFFFF);
     }
 
     if (KEY_DOWN(BUTTON_DOWN, currentButtons) && state.cowboy.row < HEIGHT - ROOTYTOOTYPOINTNSHOOTY_HEIGHT) {
         state.cowboy.row++;
+        drawRectDMA(state.cowboy.col - 1, state.cowboy.row - 1, ROOTYTOOTYPOINTNSHOOTY_WIDTH + 2, 1, 0xFFFF);
     }
 
     if (KEY_DOWN(BUTTON_LEFT, currentButtons) && state.cowboy.col > 0) {
         state.cowboy.col--;
+        drawRectDMA((state.cowboy.col) + ROOTYTOOTYPOINTNSHOOTY_WIDTH, state.cowboy.row - 1, 1, ROOTYTOOTYPOINTNSHOOTY_HEIGHT + 2, 0xFFFF);
     }
 
     if (KEY_DOWN(BUTTON_RIGHT, currentButtons) && state.cowboy.col < WIDTH - ROOTYTOOTYPOINTNSHOOTY_WIDTH) {
         state.cowboy.col++;
+        drawRectDMA(state.cowboy.col - 1, state.cowboy.row - 1, 1, ROOTYTOOTYPOINTNSHOOTY_HEIGHT + 2, 0xFFFF);
     }
 
     if (KEY_JUST_PRESSED(BUTTON_A, currentButtons, previousButtons)) {
         spawnBullet();
     }
-
-//    if (state.vBlanksUntilNextTruck-- == 0) {
-//        spawnTruck();
-//    }
 }
-
-
-
-/**
- * Control flow?:
- * Init things
- * - black background
- * - draw cowboy
- * - grid of trucks? random seed???
- *
- * every vblank
- * - key down?
- *    - move cowboy, redraw
- * - detect if colision with trucks
- * - shooting
- */
-
-/*
- * WHAT I GENERALLY WANT TO DO:
- * - Set background to black box
- * - (eventually) start music
- * - draw cowboy
- * - init cowboy controls
- */

@@ -41,6 +41,6 @@ extern volatile unsigned short* display_interrupts;
 extern volatile unsigned short* interrupt_enable;
 extern volatile unsigned short* sound_control;
 
-void play_sound(const signed char* sound, int total_samples, int sample_rate, char channel);
+void play_sound(const signed char* sound, int total_samples, char channel);
 void on_vblank(void);
 void delay(int);

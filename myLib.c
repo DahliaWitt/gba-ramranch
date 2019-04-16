@@ -52,11 +52,10 @@ volatile unsigned char* fifo_buffer_b  = (volatile unsigned char*) 0x40000A4;
 /* global variables to keep track of how much longer the sounds are to play */
 unsigned int channel_a_vblanks_remaining = 0;
 unsigned int channel_a_total_vblanks = 0;
-unsigned int channel_b_vblanks_remaining = 0;
 
 
 /* play a sound with a number of samples, and sample rate on one channel 'A' or 'B' */
-void play_sound(const signed char* sound, int total_samples, int sample_rate, char channel) {
+void play_sound(const signed char* sound, int total_samples, char channel) {
     /* start by disabling the timer and dma controller (to reset a previous sound) */
     *timer0_control = 0;
     if (channel == 'A') {
@@ -78,27 +77,22 @@ void play_sound(const signed char* sound, int total_samples, int sample_rate, ch
         *dma1_source = (unsigned int) sound;
         *dma1_destination = (unsigned int) fifo_buffer_a;
         *dma1_control = DMA_DEST_FIXED | DMA_REPEAT | DMA_32 | DMA_SYNC_TO_TIMER | DMA_ENABLE;
-    } else if (channel == 'B') {
-        *dma2_source = (unsigned int) sound;
-        *dma2_destination = (unsigned int) fifo_buffer_b;
-        *dma2_control = DMA_DEST_FIXED | DMA_REPEAT | DMA_32 | DMA_SYNC_TO_TIMER | DMA_ENABLE;
     }
-
     /* set the timer so that it increments once each time a sample is due
      * we divide the clock (ticks/second) by the sample rate (samples/second)
      * to get the number of ticks/samples */
-    unsigned short ticks_per_sample = CLOCK / sample_rate;
 
     /* the timers all count up to 65536 and overflow at that point, so we count up to that
      * now the timer will trigger each time we need a sample, and cause DMA to give it one! */
-    *timer0_data = 65536 - ticks_per_sample;
+    unsigned short ticks_per_sample = CLOCK / 8000;
+    *timer0_data = 65536 - ticks_per_sample; // 0xF7CF;
 
     /* determine length of playback in vblanks
      * this is the total number of samples, times the number of clock ticks per sample,
      * divided by the number of machine cycles per vblank (a constant) */
-    if (channel == 'A') {
-        channel_a_vblanks_remaining = (total_samples / 59);
-    }
+    channel_a_total_vblanks = total_samples * ticks_per_sample * (1.0 / CYCLES_PER_BLANK);
+    channel_a_vblanks_remaining = total_samples * ticks_per_sample * (1.0 / CYCLES_PER_BLANK);
+
 
     /* enable the timer */
     *timer0_control = TIMER_ENABLE | TIMER_FREQ_1;
@@ -110,10 +104,14 @@ void on_vblank(void) {
     //*interrupt_enable = 0;
     //unsigned short temp = *interrupt_state;
     /* update channel A */
+
+    /*drawRectDMA(0, 0, 40, 10, 0xFFFF);
+    char str[30];
+    sprintf(str, "%d", channel_a_vblanks_remaining);
+    drawString(0, 0, str, 0x0000);*/
+
     if (channel_a_vblanks_remaining == 0) {
-        *dma1_control = 0;
-        *master_sound = 0;
-        play_sound(ramranch_data, ramranch_length, 8000, 'A');
+        play_sound(ramranch_data, ramranch_length, 'A');
     } else {
         channel_a_vblanks_remaining--;
     }
